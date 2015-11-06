@@ -2,7 +2,7 @@ var testService = angular.module('testService', []);
 
 testService.factory('factoryName', function factoryName($http) {
     var testGet = function(query, callback) {
-      $http.get('test.json', {
+      $http.get('http://testapp1withtotalyuniquename.eu-gb.mybluemix.net/', {
         /*  params: {
             q: query
           }*/
@@ -15,7 +15,7 @@ testService.factory('factoryName', function factoryName($http) {
         });
     };
     var test2 = function () {
-  
+
     }
     return {
       method1: testGet,
