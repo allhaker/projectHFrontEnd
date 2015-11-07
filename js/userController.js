@@ -18,8 +18,17 @@ userController.controller('mainController', function mainController($scope, user
 });
 
 userController.controller('loginController', function loginController($scope, userFactory, $location) {
+  $scope.init = function() {
+    $scope.user = new User();
+  };
+
   $scope.login = function() {
-    $location.path("assistant");
+    console.log($scope.user);
+    userFactory.loginUser("no data", function(error, data) {
+      if (!error) {
+        $location.path("/assistant");
+      }
+    }, $scope.user);
   };
 });
 

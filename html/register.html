@@ -15,20 +15,55 @@
                     <img class="avatar" src="img/login.png">
                   </div>
                   <form id="registerForm" name="registerForm" ng-submit="register()">
-                    <div>
-                      <label for="form-username">Username:</label>
-                      <input type="text" name="username" id="form-username" class="form-control" ng-model="username" required>
+                    <div class="row">
+                      <div class="col-sm-5">
+                          <label for="form-username">Username:</label>
+                      </div>
+                      <div class="col-sm-7">
+                          <input type="text" name="username" id="form-username" class="form-control" ng-model="user.username" required>
+                      </div>
                     </div>
-                    <div>
-                      <label for="form-password">Password:</label>
-                      <input type="password" name="password" id="form-password" class="form-control" ng-model="password" required>
+                    <div class="row">
+                      <div class="col-sm-5">
+                          <label for="form-password">Password:</label>
+                      </div>
+                      <div class="col-sm-7">
+                          <input type="password" name="password" id="form-password" class="form-control" ng-model="user.password" required>
+                      </div>
                     </div>
-                    <div>
-                      <label for="form-password">Email:</label>
-                      <input type="password" name="password" id="form-password" class="form-control" ng-model="password" required>
+                    <div class="row">
+                      <div class="col-sm-5">
+                          <label for="form-email">Email:</label>
+                      </div>
+                      <div class="col-sm-7">
+                          <input type="email" name="email" id="form-email" class="form-control" ng-model="user.email" required>
+                      </div>
                     </div>
-                    <input class="button" id="restore-pass" type="submit" value="Login">
-                    <a href="#/register"><button type="button" class="button">Register</button></a>
+                    <div class="row">
+                      <div class="col-sm-5">
+                          <label for="form-firstName">First name:</label>
+                      </div>
+                      <div class="col-sm-7">
+                          <input type="text" name="firstName" id="form-firstName" class="form-control" ng-model="user.firstName" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-5">
+                          <label for="form-lastName">Last name:</label>
+                      </div>
+                      <div class="col-sm-7">
+                          <input type="text" name="lastName" id="form-lastName" class="form-control" ng-model="user.lastName" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-5">
+                          <label for="form-pic">Browse:</label>
+                      </div>
+                      <div class="col-sm-7">
+                          <input type="file" name="pic" id="form-pic" class="form-control" ng-model="user.lastName" required>
+                      </div>
+                    </div>
+                    <input class="button" id="restore-registration" type="submit" value="Register!">
                   </form>
                 </div>
               </div>
@@ -36,22 +71,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-<div class="container-helper">
-  <div class="full-screen">
-    <div class="title-container">
-      <h1><b>Register</b></h1>
-      <form id="registerForm" name="registerForm" ng-submit="register()">
-        <input type="text" class="form-control" placeholder="Username" ng-model="user.username" required/>
-        <input type="password" class="form-control" placeholder="Password" ng-model="user.password" required/>
-        <input type="text" class="form-control" placeholder="First Name" ng-model="user.firstName" required/>
-        <input type="text" class="form-control" placeholder="Last Name" ng-model="user.secondName" required/>
-        <input type="email" class="form-control" placeholder="E-mail" ng-model="user.email" required/>
-        <input class="button" id="restore-pass" type="submit" value="Register"><br>
-        <input type="file" id="image" name="image">
-      </form>
     </div>
   </div>
 </div>
