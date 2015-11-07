@@ -1,4 +1,45 @@
-<div class="container-helper" ng-init="init()">
+<header ng-init="init()">
+  <img src="img/logo.png" width="200px">
+</header>
+<div class="container-helper" id="register">
+  <div class="full-screen">
+    <div class="title-container">
+      <div class="full-screen">
+        <div id="profile" class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12 col-sm-offset-0">
+              <div class="row profile">
+                <div class="profile-part">
+                  <h2>Please, register.</h2>
+                  <div class="profile-part head">
+                    <img class="avatar" src="img/login.png">
+                  </div>
+                  <form id="registerForm" name="registerForm" ng-submit="register()">
+                    <div>
+                      <label for="form-username">Username:</label>
+                      <input type="text" name="username" id="form-username" class="form-control" ng-model="username" required>
+                    </div>
+                    <div>
+                      <label for="form-password">Password:</label>
+                      <input type="password" name="password" id="form-password" class="form-control" ng-model="password" required>
+                    </div>
+                    <div>
+                      <label for="form-password">Email:</label>
+                      <input type="password" name="password" id="form-password" class="form-control" ng-model="password" required>
+                    </div>
+                    <input class="button" id="restore-pass" type="submit" value="Login">
+                    <a href="#/register"><button type="button" class="button">Register</button></a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-helper">
   <div class="full-screen">
     <div class="title-container">
       <h1><b>Register</b></h1>
