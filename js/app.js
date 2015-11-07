@@ -15,6 +15,10 @@
         templateUrl: "html/login.html",
         controller: "loginController"
     }).
+    when('/register', {
+        templateUrl: "html/register.html",
+        controller: "registerController"
+    }).
     when('/assistant', {
         templateUrl: "html/assistant.html",
         controller: "assistantController"
