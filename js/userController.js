@@ -29,16 +29,9 @@ userController.controller('registerController', function loginController($scope,
   };
 
   $scope.register = function() {
-    $.ajax({
-      type: "POST",
-      url: "https://safe-oasis-1306.herokuapp.com/users",
-      data: {"username": "Oleg"},
-      success: function() {}
-    });
     userFactory.registerUser("no data", function(error, data) {
       if (!error) {
-        $scope.testData = data;
-        console.log($scope.testData);
+        $location.path("/login");
       }
     }, $scope.user);
   };
