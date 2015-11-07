@@ -9,7 +9,12 @@ userController.controller('mainController', function mainController($scope, fact
       }
     });
   }
-  factoryName.method2();
+  factoryName.method2("no data", function(error, data) {
+    if (!error) {
+      $scope.myData = data;
+      console.log($scope.myData);
+    }
+  });
 });
 
 userController.controller('loginController', function loginController($scope, factoryName, $location) {
@@ -20,6 +25,6 @@ userController.controller('loginController', function loginController($scope, fa
 
 userController.controller('assistantController', function assistantController($scope, factoryName) {
   $scope.init = function() {
-  
+
   };
 });

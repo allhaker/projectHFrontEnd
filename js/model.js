@@ -23,7 +23,7 @@ function User() {
         this.company = object.company;
         this.createdDate = object.createdDate;
         this.email = object.email;
-        this.roleId = object.userRole.name;
+        //this.roleId = object.userRole.name;
         this.deleted = object.deleted;
     }
 

@@ -22,3 +22,13 @@
   }]);
 
 })();
+
+function createUrl() {
+    var url = 'https://safe-oasis-1306.herokuapp.com';
+    for (var index = 0; index < arguments.length; index++) {
+        url += '/' + arguments[index];
+        console.log(arguments[index]);
+    }
+    console.log(url);
+    return url;
+}
