@@ -14,6 +14,10 @@
     when('/login', {
         templateUrl: "html/login.html",
         controller: "loginController"
+    }).
+    when('/assistant', {
+        templateUrl: "html/assistant.html",
+        controller: "assistantController"
     });
   }]);
 

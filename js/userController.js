@@ -14,6 +14,12 @@ userController.controller('mainController', function mainController($scope, fact
 
 userController.controller('loginController', function loginController($scope, factoryName, $location) {
   $scope.login = function() {
-    $location.path("assitant");
+    $location.path("assistant");
+  };
+});
+
+userController.controller('assistantController', function assistantController($scope, factoryName) {
+  $scope.init = function() {
+  
   };
 });
