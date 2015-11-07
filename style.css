@@ -3,10 +3,55 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
-
+header{
+  text-align: center;
+}
+p {
+  color: white;
+}
 h1 {
   font-size: 40pt;
   color: #617221;
+}
+h2 {
+  color: #92D13D;
+}
+#loginForm .form-control {
+  width: 250px;
+  text-align: center;
+  margin-top: 10px;
+}
+#loginForm .button {
+  margin-top: 10px;
+}
+
+#profile {
+  text-align: center;
+}
+#profile .avatar{
+  border: 5px solid #92D13D;
+  border-radius: 50%;
+}
+#profile .avatar-text{
+  font-size: 20pt;
+  font-weight: bold;
+}
+#advices {
+  margin-top: 50px;
+}
+.advice {
+  background-color: #3D9BE9;
+}
+.container {
+  width: 800px;
+}
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.advice {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .container-helper {
   margin: 0;
