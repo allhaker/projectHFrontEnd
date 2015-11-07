@@ -5,6 +5,7 @@ body {
 }
 header{
   text-align: center;
+  background-color: #E9EBE3;
 }
 p {
   color: white;
@@ -14,7 +15,12 @@ h1 {
   color: #617221;
 }
 h2 {
-  color: #92D13D;
+  color: #353536;
+}
+footer {
+  text-align: center;
+  background-color: #282828;
+  color: white;
 }
 #loginForm .form-control {
   width: 250px;
@@ -24,17 +30,48 @@ h2 {
 #loginForm .button {
   margin-top: 10px;
 }
-
+#main .full-screen {
+  background-color: #E9EBE3;
+}
 #profile {
   text-align: center;
 }
-#profile .avatar{
-  border: 5px solid #92D13D;
+#profile .avatar {
+  width: 300px;
   border-radius: 50%;
+  margin-top: 30px;
 }
-#profile .avatar-text{
+#profile .avatar-text, #profile .avatar-icon {
   font-size: 20pt;
   font-weight: bold;
+  color: black;
+}
+#profile .avatar-text {
+  margin-top: 30px;
+}
+#profile .avatar-icon {
+  display: inline-block;
+}
+#profile .profile-part {
+  display: inline-block;
+}
+#profile .profile {
+  display: flex;
+  justify-content: center;
+}
+#profile .head {
+  padding-left: 30px;
+  padding-right: 30px;
+  align-self: center;
+}
+#profile .head > button{
+  width: 150px;
+  height: 80px;
+  border-radius: 60px;
+  border: none;
+  font-weight: bold;
+  font-size: 13pt;
+  background-color: white;
 }
 #advices {
   margin-top: 50px;

@@ -3,6 +3,16 @@
     <div class="title-container">
       <h1>Welcome To <b>Project H</b></h1>
       <a href="#/login"><button class="button">Login</button></a>
+      <div ng-init="executeTestGet()">
+        <div ng-repeat="test in testData">
+          <p>
+            ID {{test.id}}
+          </p>
+          <p>
+            NAME {{test.username}}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
