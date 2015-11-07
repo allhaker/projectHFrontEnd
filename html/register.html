@@ -1,11 +1,15 @@
-<div class="container-helper">
+<div class="container-helper" ng-init="init()">
   <div class="full-screen">
     <div class="title-container">
       <h1><b>Register</b></h1>
       <form id="registerForm" name="registerForm" ng-submit="register()">
-          <input type="text" name="username" id="usernameForm" class="form-control" placeholder="Username" ng-model="username" required>
-          <input type="password" name="password" class="form-control" placeholder="Password" ng-model="password" required>
-          <input class="button" id="restore-pass" type="submit" value="Login"><br>
+        <input type="text" class="form-control" placeholder="Username" ng-model="user.username" required/>
+        <input type="password" class="form-control" placeholder="Password" ng-model="user.password" required/>
+        <input type="text" class="form-control" placeholder="First Name" ng-model="user.firstName" required/>
+        <input type="text" class="form-control" placeholder="Last Name" ng-model="user.secondName" required/>
+        <input type="email" class="form-control" placeholder="E-mail" ng-model="user.email" required/>
+        <input class="button" id="restore-pass" type="submit" value="Register"><br>
+        <input type="file" id="image" name="image">
       </form>
     </div>
   </div>

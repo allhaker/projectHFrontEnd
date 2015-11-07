@@ -1,8 +1,8 @@
 var testService = angular.module('testService', []);
 
-testService.factory('factoryName', function factoryName($http) {
+testService.factory('userFactory', function userFactory($http) {
   var testGet = function(query, callback) {
-    $http.get('https://safe-oasis-1306.herokuapp.com/users/1', {
+    $http.get('https://safe-oasis-1306.herokuapp.com/users/', {
         /*  params: {
             q: query
           }*/
@@ -14,13 +14,9 @@ testService.factory('factoryName', function factoryName($http) {
         callback(e);
       });
   };
-  var getUser = function(query, callback) {
+  var getOne = function(query, callback) {
     var request = createUrl('users', 1);
-    $http.get(request, {
-        /*  params: {
-            q: query
-          }*/
-      })
+    $http.get(request)
       .success(function(data) {
         console.log(data);
         var user = new User();
@@ -30,24 +26,38 @@ testService.factory('factoryName', function factoryName($http) {
         callback(e);
       });
   }
+
+  var register = function(query, callback, payload) {
+    var request = createUrl('users');
+    var userdata = JSON.stringify(payload.toJSON());
+
+    $http({
+        method: 'POST',
+        url: request,
+        data: userdata,
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      })
+      .success(function(data) {
+        console.log(data);
+        var user = new User();
+        user.fromJSON(data);
+        callback(null, user);
+      }).error(function(e) {
+        callback(e);
+      });
+    /*  $http.post(request, payload)
+        .success(function(data) {
+          console.log(data);
+          var user = new User();
+          user.fromJSON(data);
+          callback(null, user);
+        }).error(function(e) {
+          callback(e);
+        });*/
+  }
   return {
     method1: testGet,
-    method2: getUser
+    getUser: getOne,
+    registerUser: register
   }
 });
-
-this.getUser = function(id, success, error) {
-  var request = createRequest(createUrl('users', id), 'GET')
-  $http(request).success(function(data) {
-    console.log(data);
-    if (data.header.result && data.header.version == version) {
-      var user = new User();
-      user.fromJSON(data.data);
-      success(user);
-    } else {
-      error();
-    }
-  }).error(function() {
-    error();
-  });
-};

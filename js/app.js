@@ -23,6 +23,9 @@
         templateUrl: "html/assistant.html",
         controller: "assistantController"
     });
+    $httpProvider.defaults.useXDomain = true;
+    console.log($httpProvider.defaults.headers);
+    delete $httpProvider.defaults.headers.common["X-Requested-With"];
   }]);
 
 })();
