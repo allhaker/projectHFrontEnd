@@ -10,7 +10,7 @@
             <div class="col-sm-12 col-sm-offset-0">
               <div class="row profile">
                 <div class="profile-part">
-                  <h2>Welcome back, <b>John Petrovich</b> You are doing great!</h2>
+                  <h2>Welcome back, <b>{{user.firstName}} {{user.secondName}}</b> You are doing great!</h2>
                   <div class="profile-part head">
                     <button>Logout</button>
                   </div>
@@ -18,7 +18,7 @@
                     <img class="avatar" src="img/profile.jpg">
                   </div>
                   <div class="profile-part head">
-                    <button>Medical Card</button>
+                    <button data-toggle="modal" data-target="#myModal">Medical Card</button>
                   </div>
                   <div class="avatar-text">Today:</div>
                   <div class="avatar-icon">
@@ -36,22 +36,115 @@
         </div>
       </div>
       <div id="advices" class="container-fluid">
-        <div class="container-fluid advice">
+        <div class="container-fluid advice" id="{{huy}}">
           <div class="container">
             <div class="col-sm-4">
               <img src="img/doctor.png" width="200px">
             </div>
             <div class="col-sm-8">
-              <p>
-                It's been 5 months since your last visit.
-              </p>
-              <p>
-                Would you like to schedule an appointment?
-              </p>
+              <div>
+                <h2>PROPOSED TIP:</h2>
+              </div>
+              <div class="tip-content">
+                <p>
+                  It's been 5 months since your last visit.
+                  <br> Would you like to schedule an appointment?
+                </p>
+              </div>
+              <div class="tip-action">
+                <div class="col-sm-6">
+                  <a href><b>Yes, do it!</b></a>
+                </div>
+                <div class="col-sm-6">
+                  <a href>No, later</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="col-sm-4">
+          <div>
+            <img class="avatar" src="img/profile.jpg">
+          </div>
+          <div>
+            <b>{{user.firstName}} {{user.secondName}}</b>
+          </div>
+          <div class="modal-down-block">
+            <p>
+              Age: <i>{{health.age}}</i>
+            </p>
+            <p>
+              Sex: <i>{{health.sex}}</i>
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <h5><b>Medical Card</b></h5>
+          <div class="dataset">
+            <div class="row">
+              <div class="col-sm-6">
+                Paikkakunta (city) - <i>{{health.city}}</i>
+              </div>
+              <div class="col-sm-6">
+                Tyotehtava (job) - <i>{{health.job}}</i>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                Paint (weight) - <i>{{health.weight}} kg</i>
+              </div>
+              <div class="col-sm-6">
+                BMI - <i>{{health.bmi}}</i>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                Vyotaronymparys (waist circumference) - <i>{{health.waistCircumference}} cm</i>
+              </div>
+            </div>
+          </div>
+          <div class="dataset">
+            <h6><b>Lifestyle</b></h6>
+            <div class="row">
+              <div class="col-sm-12">
+                Tupakka (smoking) - <i>{{health.smoking}}</i>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                Alkoholihaittojen Riski (alcohol abuse) - <i>{{health.alcoholAbuse}}</i>
+              </div>
+            </div>
+          </div>
+          <div class="dataset">
+            <h6><b>Blood</b></h6>
+            <div class="row">
+              <div class="col-sm-12">
+                Verensokeri (blood sugar) - <i>{{health.bloodSugar}}</i>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                Varenpaine (blood pressure) - <i>{{health.bloodPressure}}</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </div>

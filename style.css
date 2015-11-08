@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,500,600,700);
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -8,7 +8,7 @@ header{
   background-color: #E9EBE3;
 }
 p {
-  color: white;
+  color: black;
 }
 h1 {
   font-size: 40pt;
@@ -41,7 +41,7 @@ label {
 }
 #profile .avatar-text, #profile .avatar-icon {
   font-size: 20pt;
-  font-weight: bold;
+  font-weight: 400;
   color: black;
 }
 #profile .avatar-text {
@@ -74,8 +74,28 @@ label {
 #advices {
   margin-top: 50px;
 }
+#myModal .modal-content{
+  height: 300px;
+  text-align: center;
+  width: 650px;
+}
+#myModal .row{
+  font-size: 9pt;
+  line-height: 25px;
+}
+#myModal p {
+  color: black;
+}
+#myModal .avatar {
+  width: 150px;
+  border-radius: 50%;
+}
+#myModal .modal-down-block {
+  margin-top: 20px;
+}
+
 .advice {
-  background-color: #3D9BE9;
+  background-color: white;
 }
 .container {
   width: 800px;
@@ -117,7 +137,16 @@ label {
   display: inline-block;
   text-align: center;
 }
-
+.tip-content, .tip-action {
+  margin-top: 50px;
+}
+.tip-content {
+  text-align: left;
+  font-size: 13pt;
+}
+.tip-action a {
+  color: black;
+}
 .button {
   margin-right: 10px;
   background-color: white;
