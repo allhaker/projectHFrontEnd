@@ -48,6 +48,7 @@ userController.controller('registerController', function loginController($scope,
 });
 userController.controller('assistantController', function assistantController($scope, userFactory) {
   $scope.init = function() {
+    $scope.show = true;
     userFactory.getUser("no data", function(error, data) {
       if (!error) {
         $scope.huy = "dfdf";
@@ -62,5 +63,11 @@ userController.controller('assistantController', function assistantController($s
         $scope.health.fromJSON(data);
       }
     },localStorage.getItem("userid"));
+  };
+  $scope.addAdvice = function() {
+    $scope.show = false;
+  };
+  $scope.discardAdivce = function() {
+    alert("I am alive");
   };
 });
