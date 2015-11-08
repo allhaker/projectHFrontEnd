@@ -12,7 +12,7 @@
                 <div class="profile-part">
                   <h2>Welcome back, <b>{{user.firstName}} {{user.secondName}}</b> You are doing great!</h2>
                   <div class="profile-part head">
-                    <button>Logout</button>
+                    <button ng-click="logout()">Logout</button>
                   </div>
                   <div class="profile-part head">
                     <img class="avatar" src="img/profile.jpg">
@@ -47,7 +47,7 @@
         <div class="container-fluid advice" ng-show="show">
           <div class="container">
             <div class="col-sm-4">
-              <img src="img/doctor.png" width="200px">
+              <img src="img/medical-main-icon.png" width="200px">
             </div>
             <div class="col-sm-8">
               <div>

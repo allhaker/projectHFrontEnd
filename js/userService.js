@@ -1,19 +1,7 @@
 var testService = angular.module('testService', []);
 
 testService.factory('userFactory', function userFactory($http) {
-  var testGet = function(query, callback) {
-    $http.get('http://yevgenjava.eu-gb.mybluemix.net/test', {
-        /*  params: {
-            q: query
-          }*/
-      })
-      .success(function(data) {
-        callback(null, data);
-      })
-      .error(function(e) {
-        callback(e);
-      });
-  };
+
   var getOne = function(query, callback, id) {
     var request = createUrl('users', id);
     $http.get(request)
@@ -26,7 +14,6 @@ testService.factory('userFactory', function userFactory($http) {
         callback(e);
       });
   };
-
 
   var login = function(query, callback, payload) {
     var request = createUrl('users/login');
@@ -77,7 +64,6 @@ testService.factory('userFactory', function userFactory($http) {
       });
   };
   return {
-    method1: testGet,
     getUser: getOne,
     registerUser: register,
     loginUser: login,

@@ -4,12 +4,7 @@
   app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
     $routeProvider.
     when('/', {
-      templateUrl: "html/intro.html",
-      controller: "mainController"
-    }).
-    when('/test', {
-        templateUrl: "html/test.html",
-        controller: "mainController"
+      templateUrl: "html/intro.html"
     }).
     when('/login', {
         templateUrl: "html/login.html",

@@ -1,22 +1,5 @@
 var userController = angular.module('userController', ['testService']);
 
-userController.controller('mainController', function mainController($scope, userFactory) {
-  $scope.executeTestGet = function() {
-    userFactory.getUser("no data", function(error, data) {
-      if (!error) {
-        $scope.testData = data;
-        console.log($scope.testData);
-      }
-    });
-  }
-  userFactory.method1("no data", function(error, data) {
-    if (!error) {
-      $scope.testData = data;
-      console.log($scope.testData);
-    }
-  });
-});
-
 userController.controller('loginController', function loginController($scope, userFactory, $location) {
   $scope.init = function() {
     $scope.user = new User();
@@ -46,7 +29,7 @@ userController.controller('registerController', function loginController($scope,
     }, $scope.user);
   };
 });
-userController.controller('assistantController', function assistantController($scope, userFactory) {
+userController.controller('assistantController', function assistantController($scope, userFactory, $location) {
   $scope.init = function() {
     $scope.show = true;
     userFactory.getUser("no data", function(error, data) {
@@ -65,9 +48,14 @@ userController.controller('assistantController', function assistantController($s
     },localStorage.getItem("userid"));
   };
   $scope.addAdvice = function() {
-    $scope.show = false;
   };
   $scope.discardAdivce = function() {
-    alert("I am alive");
+    $scope.show = false;
+  };
+  $scope.logout = function() {
+    localStorage.removeItem("userid");
+    localStorage.removeItem("password");
+    localStorage.removeItem("username");
+    $location.path("/");
   };
 });
