@@ -23,11 +23,11 @@
                   <div class="avatar-text">Today:</div>
                   <div class="avatar-icon">
                     <img src="img/steps.png" height="30px">
-                    <span>5700</span>
+                    <span>{{steps}}</span>
                   </div>
                   <div class="avatar-icon">
                     <img src="img/heart.png" height="30px">
-                    <span>90</span>
+                    <span>{{heart}}</span>
                   </div>
                 </div>
               </div>
@@ -35,16 +35,16 @@
           </div>
         </div>
         <div id="activeAdvices" class="container">
-          <div class="active-advice-block">
-            <div class="active-advice-block-content">
-              Make 10000 steps today
+          <div class="active-advice-block" ng-repeat="activeTip in activeTips">
+            <div class="active-advice-block-content" ng-bind-html="activeTip">
+
             </div>
           </div>
         </div>
       </div>
 
       <div id="advices" class="container-fluid">
-        <div class="container-fluid advice" ng-show="show">
+        <div class="container-fluid advice" ng-show="show" ng-repeat="tip in tips">
           <div class="container">
             <div class="col-sm-4">
               <img src="img/medical-main-icon.png" width="200px">
@@ -54,9 +54,8 @@
                 <h2>PROPOSED TIP:</h2>
               </div>
               <div class="tip-content">
-                <p>
-                  It's been 5 months since your last visit.
-                  <br> Would you like to schedule an appointment?
+                <p ng-bind-html="tip">
+
                 </p>
               </div>
               <div class="tip-action">

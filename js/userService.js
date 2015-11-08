@@ -63,10 +63,38 @@ testService.factory('userFactory', function userFactory($http) {
         callback(e);
       });
   };
+  var allProposedTips = function(query, callback, id) {
+    var request = createUrl('users/inst/' + id);
+    $http({
+        method: 'GET',
+        url: request
+      })
+      .success(function(data) {
+        console.log(data);
+        callback(null, data);
+      }).error(function(e) {
+        callback(e);
+      });
+  };
+  var sensorData = function(query, callback, id) {
+    var request = createUrl('users/ind',id,query);
+    $http({
+        method: 'GET',
+        url: request
+      })
+      .success(function(data) {
+        console.log(data);
+        callback(null, data);
+      }).error(function(e) {
+        callback(e);
+      });
+  };
   return {
     getUser: getOne,
     registerUser: register,
     loginUser: login,
-    getHealth : healthCard
+    getHealth : healthCard,
+    getAllProposedTips : allProposedTips,
+    getSensorData : sensorData
   }
 });

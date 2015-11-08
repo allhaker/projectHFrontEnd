@@ -111,6 +111,7 @@ form .row {
 .advice {
   padding-top: 30px;
   padding-bottom: 30px;
+  margin-bottom: 50px;
 }
 .form-control {
   width: 250px;
@@ -166,6 +167,7 @@ form .row {
   border-radius: 50%;
   border: 10px solid #C53434;
   background-color: white;
+  margin-right: 40px;
 }
 .active-advice-block-content {
   padding: 10px;
