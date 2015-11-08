@@ -19,7 +19,7 @@
         templateUrl: "html/register.html",
         controller: "registerController"
     }).
-    when('/assistant', {
+    when('/assistant/:id', {
         templateUrl: "html/assistant.html",
         controller: "assistantController"
     });
@@ -31,7 +31,7 @@
 })();
 
 function createUrl() {
-    var url = 'https://safe-oasis-1306.herokuapp.com';
+    var url = 'http://yevgenjava.eu-gb.mybluemix.net';
     for (var index = 0; index < arguments.length; index++) {
         url += '/' + arguments[index];
         console.log(arguments[index]);

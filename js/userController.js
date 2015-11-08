@@ -26,7 +26,7 @@ userController.controller('loginController', function loginController($scope, us
     console.log($scope.user);
     userFactory.loginUser("no data", function(error, data) {
       if (!error) {
-        $location.path("/assistant");
+        $location.path("/assistant/" + localStorage.getItem("userid"));
       }
     }, $scope.user);
   };
@@ -35,6 +35,7 @@ userController.controller('loginController', function loginController($scope, us
 userController.controller('registerController', function loginController($scope, userFactory, $location) {
   $scope.init = function() {
     $scope.user = new User();
+    console.log($scope.user);
   };
 
   $scope.register = function() {
@@ -47,6 +48,19 @@ userController.controller('registerController', function loginController($scope,
 });
 userController.controller('assistantController', function assistantController($scope, userFactory) {
   $scope.init = function() {
-
+    userFactory.getUser("no data", function(error, data) {
+      if (!error) {
+        $scope.huy = "dfdf";
+        $scope.user = data;
+        console.log($scope.user);
+      }
+    },localStorage.getItem("userid"));
+    userFactory.getHealth("no data", function(error, data) {
+      console.log(data);
+      if (!error) {
+        $scope.health = new MedicalCard();
+        $scope.health.fromJSON(data);
+      }
+    },localStorage.getItem("userid"));
   };
 });

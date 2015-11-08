@@ -14,8 +14,8 @@ testService.factory('userFactory', function userFactory($http) {
         callback(e);
       });
   };
-  var getOne = function(query, callback) {
-    var request = createUrl('users', 1);
+  var getOne = function(query, callback, id) {
+    var request = createUrl('users', id);
     $http.get(request)
       .success(function(data) {
         console.log(data);
@@ -35,19 +35,14 @@ testService.factory('userFactory', function userFactory($http) {
     $http({
         method: 'POST',
         url: request,
-        data: $.param({username: payload.username, pass: payload.password}),
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
+        data: userdata
       })
       .success(function(data) {
         console.log(data);
         localStorage.setItem("userid", data.id);
         localStorage.setItem("username", data.username);
         localStorage.setItem("password", data.password);
-        var user = new User();
-        user.fromJSON(data);
-        callback(null, user);
+        callback(null, "dummy");
       }).error(function(e) {
         callback(e);
       });
@@ -55,21 +50,28 @@ testService.factory('userFactory', function userFactory($http) {
   var register = function(query, callback, payload) {
     var request = createUrl('users');
     var userdata = JSON.stringify(payload.toJSON());
-
+    console.log(userdata);
     $http({
         method: 'POST',
         url: request,
-        data: $.param(payload.toJSON()),
-        //data: userdata,
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
+        data: userdata
       })
       .success(function(data) {
         console.log(data);
-        var user = new User();
-        user.fromJSON(data);
-        callback(null, user);
+        callback(null, "dummy");
+      }).error(function(e) {
+        callback(e);
+      });
+  };
+  var healthCard = function(query, callback, id) {
+    var request = createUrl('users/card/' + id);
+    $http({
+        method: 'GET',
+        url: request
+      })
+      .success(function(data) {
+        console.log(data);
+        callback(null, data);
       }).error(function(e) {
         callback(e);
       });
@@ -78,6 +80,7 @@ testService.factory('userFactory', function userFactory($http) {
     method1: testGet,
     getUser: getOne,
     registerUser: register,
-    loginUser: login
+    loginUser: login,
+    getHealth : healthCard
   }
 });
