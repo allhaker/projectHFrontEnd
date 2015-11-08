@@ -34,9 +34,17 @@
             </div>
           </div>
         </div>
+        <div id="activeAdvices" class="container">
+          <div class="active-advice-block">
+            <div class="active-advice-block-content">
+              Make 10000 steps today
+            </div>
+          </div>
+        </div>
       </div>
+
       <div id="advices" class="container-fluid">
-        <div class="container-fluid advice" id="{{huy}}">
+        <div class="container-fluid advice" ng-show="show">
           <div class="container">
             <div class="col-sm-4">
               <img src="img/doctor.png" width="200px">
@@ -53,10 +61,10 @@
               </div>
               <div class="tip-action">
                 <div class="col-sm-6">
-                  <a href><b>Yes, do it!</b></a>
+                  <a href ng-click="addAdvice()"><b>Yes, do it!</b></a>
                 </div>
                 <div class="col-sm-6">
-                  <a href>No, later</a>
+                  <a href ng-click="discardAdivce()">No, later</a>
                 </div>
               </div>
             </div>

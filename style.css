@@ -27,7 +27,9 @@ label {
   margin-right: 15px;
 }
 /*#loginForm .form-control, #registerForm .form-control {*/
-
+form .row {
+  margin-top: 10px;
+}
 #main .full-screen, #login .full-screen {
   background-color: #E9EBE3;
 }
@@ -93,7 +95,9 @@ label {
 #myModal .modal-down-block {
   margin-top: 20px;
 }
-
+#activeAdvices {
+  margin-top: 50px;
+}
 .advice {
   background-color: white;
 }
@@ -111,7 +115,6 @@ label {
 .form-control {
   width: 250px;
   text-align: center;
-  margin-top: 10px;
   display: inline-block;
   border-radius: 30px;
 }
@@ -155,4 +158,20 @@ label {
   border: none;
   font-size: 14pt;
   padding: 15px 40px 15px 40px;
+}
+.active-advice-block {
+  display: inline-flex;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 10px solid #C53434;
+  background-color: white;
+}
+.active-advice-block-content {
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+  color: #8D8D8D;
+  font-size: 14pt;
 }
