@@ -74,7 +74,7 @@ userController.controller('assistantController', function assistantController($s
           $scope.steps = parseInt(data.value);
         }
       }, localStorage.getItem("userid"));
-    }, 100);
+    }, 300);
 
   };
 
